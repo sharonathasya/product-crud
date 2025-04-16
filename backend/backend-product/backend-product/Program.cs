@@ -60,6 +60,7 @@ builder.Services.AddDbContext<dbContext>(options => options.UseSqlServer(builder
 builder.Services.AddTransient<ITokenManager, TokenManager>();
 builder.Services.AddTransient<IAccountService, AccountService>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IProductService, ProductService>();
 
 builder.Services.AddDataProtection()
     .UseCryptographicAlgorithms(new Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorConfiguration

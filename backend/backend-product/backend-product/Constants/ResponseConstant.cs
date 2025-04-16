@@ -10,10 +10,12 @@ namespace backend_product.Constants
         public const string DataNotFound = "Data is not found";
         public const string EmailExist = "Email Already Exists";
         public const string SubmitSuccess = "Successfully Submitted";
+        public const string DeleteSuccess = "Successfully Deleted";
         public const string Failed = "FAILED";
         public const string LastQuery = "Last Query";
         public const string Error = "ERROR";
         public const string InternalError = "Internal Service Error";
+        public const string DataFound = "Data is found";
         public const string NotFound = "NOT FOUND";
         public const string Undefined = "UNDIFINED";
         public const string Invalid = "INVALID";
