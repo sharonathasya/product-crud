@@ -11,6 +11,7 @@ namespace backend_product.Impl
         private readonly ITokenManager _tokenManager = tokenManager;
         private readonly dbContext _dbContext = context;
 
+        #region Register User
         public async Task<UserRes> Register(ReqAddUser request)
         {
             DateTime aDate = DateTime.Now;
@@ -72,5 +73,47 @@ namespace backend_product.Impl
 
             return userRes;
         }
+        #endregion
+
+        #region Get User By Email
+        public async Task<UserRes> GetUserByEmail(ReqIdUser request)
+        {
+            UserRes userRes = new();
+            DataUser dataUser = new();
+            try
+            {
+                var getData = context.Account.Where(x => x.Email == request.Email).FirstOrDefault();
+                if (getData != null)
+                {
+                    dataUser = new()
+                    {
+                        Userid = getData.UserId,
+                        Username = getData.Username,
+                        Email = getData.Email,
+                        CreatedTime = getData.CreatedTime
+                    };
+
+                    userRes.STATUS= Constants.ResponseConstant.Failed;
+                    userRes.MESSAGE= Constants.ResponseConstant.EmailExist;
+                    userRes.RESULT = dataUser;
+                }
+                else
+                {
+                    userRes.STATUS = Constants.ResponseConstant.NotFound;
+                    userRes.MESSAGE = Constants.ResponseConstant.DataNotFound;
+                }
+            }
+            catch (Exception ex) 
+            {
+                string errmsg = ex.Message;
+                if (errmsg.IndexOf(Constants.ResponseConstant.LastQuery) > 0)
+                    errmsg = errmsg.Substring(0, errmsg.IndexOf(Constants.ResponseConstant.LastQuery));
+
+                userRes.STATUS = Constants.ResponseConstant.Failed;
+                userRes.MESSAGE = errmsg;
+            }
+            return userRes;
+        }
+        #endregion
     }
 }

@@ -7,6 +7,8 @@ namespace backend_product.Constants
         public const string Success = "SUCCESS";
         public const string SubmitFailed = "Failed to Submit";
         public const string UsernameExist = "Username Already Exists";
+        public const string DataNotFound = "Data is not found";
+        public const string EmailExist = "Email Already Exists";
         public const string SubmitSuccess = "Successfully Submitted";
         public const string Failed = "FAILED";
         public const string LastQuery = "Last Query";

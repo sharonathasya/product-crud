@@ -17,5 +17,11 @@ namespace backend_product.Controllers
             return await userService.Register(request);
         }
 
+        [HttpPost("GetUserByEmail")]
+        public async Task<UserRes> GetUserByEmail([FromBody] ReqIdUser request)
+        {
+            return await userService.GetUserByEmail(request);
+        }
+
     }
 }
