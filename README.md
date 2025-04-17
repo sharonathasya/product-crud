@@ -1,4 +1,4 @@
-# product=crud
+# product-crud
 
 make sure you have installed .net sdk 8 or higher-crud
 
