@@ -1,6 +1,6 @@
 # product-crud
 
-make sure you have installed .net sdk 8 or higher-crud
+make sure you have installed .net sdk 8 or higher
 
 Run Locally:
 1. please run database script to create the database.
