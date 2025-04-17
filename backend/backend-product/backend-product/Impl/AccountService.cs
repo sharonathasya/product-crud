@@ -48,7 +48,7 @@ namespace backend_product.Impl
                         var token = tokenHandler.CreateToken(tokenDescriptor);
                         resLogin.jwt_token = tokenHandler.WriteToken(token);
                         resLogin.STATUS = Constants.ResponseConstant.Success;
-                        resLogin.MESSAGE = Constants.ResponseConstant.SubmitSuccess;
+                        resLogin.MESSAGE = Constants.ResponseConstant.LoginSuccess;
                     }
                     else
                     {

@@ -40,7 +40,7 @@ namespace backend_product.Impl
                 else
                 {
                     productRes.STATUS = Constants.ResponseConstant.Failed;
-                    productRes.MESSAGE = Constants.ResponseConstant.SubmitFailed;
+                    productRes.MESSAGE = Constants.ResponseConstant.ProductNameExist;
                 }
 
             }
